@@ -10,29 +10,43 @@
         </ul>
     </div>
 @endif
-
+<body class="hold-transition login-page">
+<div class="login-box">
+ <div class="login-logo">
+    <b>F</b>etec
+ </div>        
+<div class="login-box-body">
 <div class="row">
   <form method="POST" action="/auth/login">
       {!! csrf_field() !!}
 
-      <div class="form-group">
-          Email
-          <input class="form-control" type="email" name="email" value="{{ old('email') }}">
+      <div class="form-group has-feedback">
+          
+          <input class="form-control" type="email" name="email" value="{{ old('email') }}" placeholder="Email" >
+          <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
 
-      <div class="form-group">
-          Password
-          <input class="form-control" type="password" name="password" id="password">
+      <div class="form-group has-feedback">
+          
+          <input class="form-control" type="password" name="password" id="password" placeholder="Senha">
+          <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
+      <div class="row">
+        <div class="col-xs-8">
+            <label class="custom-control custom-checkbox">
+  <input type="checkbox" class="custom-control-input" name="remember" >
+  <span class="custom-control-indicator"></span>
+  <span class="custom-control-description">Lembre-se</span>
+</label>
+        </div>
 
-      <div>
-          <input type="checkbox" name="remember"> Remember Me
+      <div class="col-xs-4">
+          <button class="btn btn-primary btn-block btn-flat" type="submit">Login</button>
       </div>
-
-      <div>
-          <button class="btn btn-default" type="submit">Login</button>
       </div>
   </form>
+  <div class="social-auth-links text-center">
+  </div>
 </div>
-
+</body>
 @endsection
